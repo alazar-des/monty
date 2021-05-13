@@ -25,7 +25,7 @@ int main(int argc, char *argv[])
 	{
 		line_num++;
 		opcode = strtok(lineptr, delim);
-		if (opcode == NULL)
+		if (opcode == NULL || *opcode == '#' )
 			continue;
 		func = get_opcode_function(opcode);
 		if (func == NULL)
