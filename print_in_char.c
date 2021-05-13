@@ -1,5 +1,7 @@
 #include "monty.h"
 
+#define UNUSED(x) (void)(x)
+
 /**
  * print_dlistchar - print content of doubly linked list
  * @h: pointer to the head node

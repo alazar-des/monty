@@ -1,5 +1,7 @@
 #include "monty.h"
 
+#define UNUSED(x) (void)(x)
+
 /**
  * rotl - rotate stack to the left
  * @head: pointer to head node pointer

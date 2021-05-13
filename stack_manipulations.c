@@ -1,5 +1,7 @@
 #include "monty.h"
 
+#define UNUSED(x) (void)(x)
+
 /**
  * swap - swap the content of the first two nodes
  * @head: pointer to the head node pointer
