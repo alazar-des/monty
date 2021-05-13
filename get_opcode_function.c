@@ -6,17 +6,11 @@
  *
  * Return: function if opcode exists, otherwise NULL
  */
-void (*get_opcode_function(char *str, int queue))(stack_t **, unsigned int)
+void (*get_opcode_function(char *str))(stack_t **, unsigned int)
 {
-	void (*push)(stack_t **, unsigned int);
 	int i;
-
-	if (queue)
-		push = push_end;
-	else
-		push = push_begin;
 	instruction_t ops_inst[] = {
-		{"push", push},
+		{"push", push_begin},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
