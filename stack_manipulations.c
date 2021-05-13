@@ -1,6 +1,6 @@
 #include "monty.h"
 
-#define UNUSED(x) (void)(x)
+#define UNUSED(linenum) (void)(linenum)
 
 /**
  * swap - swap the content of the first two nodes
