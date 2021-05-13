@@ -8,9 +8,8 @@
  */
 void (*get_opcode_function(char *str))(stack_t **, unsigned int)
 {
-	int i;
 	instruction_t ops_inst[] = {
-		{"push", push_begin},
+		{"push", push},
 		{"pall", pall},
 		{"pint", pint},
 		{"pop", pop},
@@ -21,14 +20,11 @@ void (*get_opcode_function(char *str))(stack_t **, unsigned int)
 		{"mul", mul},
 		{"div", divi},
 		{"mod", mod},
-		{"pchar", pchar},
-		{"pstr", pstr},
-		{"rotl", rotl},
-		{"rotr", rotr},
 		{NULL, NULL}
 	};
+	int i;
 
-	for (i = 0; i < 15; i++)
+	for (i = 0; i < 11; i++)
 		if (strcmp(str, ops_inst[i].opcode) == 0)
 			return (ops_inst[i].f);
 	return (NULL);
