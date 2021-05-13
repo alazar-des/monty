@@ -124,6 +124,13 @@ void mod(stack_t **head, unsigned int linenum)
 		free(lineptr);
 		exit(EXIT_FAILURE);
 	}
+	if ((*head)->n == 0)
+	{
+		fprintf(stderr, "L%d: division by zero\n", linenum);
+		free_dlistint(*head);
+		free(lineptr);
+		exit(EXIT_FAILURE);
+	}
 	((*head)->next)->n %= (*head)->n;
 	delete_dnodeint(head, linenum);
 }
