@@ -1,7 +1,5 @@
 #include "monty.h"
 
-#define UNUSED(linenum) (void)(linenum)
-
 /**
  * swap - swap the content of the first two nodes
  * @head: pointer to the head node pointer
