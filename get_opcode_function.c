@@ -6,8 +6,15 @@
  *
  * Return: function if opcode exists, otherwise NULL
  */
-void (*get_opcode_function(char *str))(stack_t **, unsigned int)
+void (*get_opcode_function(char *str, int queue))(stack_t **, unsigned int)
 {
+	void (*push)(stack_t **, unsigned int);
+	int i;
+
+	if (queue)
+		push = push_end;
+	else
+		push = push_begin;
 	instruction_t ops_inst[] = {
 		{"push", push},
 		{"pall", pall},
@@ -20,11 +27,14 @@ void (*get_opcode_function(char *str))(stack_t **, unsigned int)
 		{"mul", mul},
 		{"div", divi},
 		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
+		{"rotl", rotl},
+		{"rotr", rotr},
 		{NULL, NULL}
 	};
-	int i;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 15; i++)
 		if (strcmp(str, ops_inst[i].opcode) == 0)
 			return (ops_inst[i].f);
 	return (NULL);
