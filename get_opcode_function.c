@@ -20,6 +20,8 @@ void (*get_opcode_function(char *str))(stack_t **, unsigned int)
 		{"mul", mul},
 		{"div", divi},
 		{"mod", mod},
+		{"pchar", pchar},
+		{"pstr", pstr},
 		{NULL, NULL}
 	};
 	int i;
