@@ -5,6 +5,8 @@
 #include <stdio.h>
 #include <string.h>
 
+#define UNUSED(x) (void)(x)
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -38,8 +40,9 @@ typedef struct instruction_s
 	void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
-void (*get_opcode_function(char *str))(stack_t **, unsigned int);
-void push(stack_t **head, unsigned int linenum);
+void (*get_opcode_function(char *str, int queueflag))(stack_t **, unsigned int);
+void push_begin(stack_t **head, unsigned int linenum);
+void push_end(stack_t **head, unsigned int linenum);
 void pall(stack_t **head, unsigned int linenum);
 void pint(stack_t **head, unsigned int linenum);
 void pop(stack_t **head, unsigned int linenum);
@@ -50,6 +53,10 @@ void sub(stack_t **head, unsigned int linenum);
 void mul(stack_t **head, unsigned int linenum);
 void divi(stack_t **head, unsigned int linenum);
 void mod(stack_t **head, unsigned int linenum);
+void pchar(stack_t **head, unsigned int linenum);
+void pstr(stack_t **head, unsigned int linenum);
+void rotl(stack_t **head, unsigned int linenum);
+void rotr(stack_t **head, unsigned int linenum);
 
 size_t print_dlistint(stack_t *h, unsigned int linenum, int pint_flag);
 stack_t *add_dnodeint(stack_t **head, const int n);
