@@ -22,7 +22,7 @@ size_t print_dlistchar(stack_t *h, unsigned int linenum)
 		free(lineptr);
 		exit(EXIT_FAILURE);
 	}
-	if (h->n < 0 || h->n > 132)
+	if (h->n < 0 || h->n > 137)
 	{
 		fprintf(stderr, "L%d: can't pchar, value out of range\n",
 			linenum);
@@ -46,7 +46,7 @@ size_t print_dliststr(stack_t *h, unsigned int linenum)
 	size_t len = 0;
 
 	UNUSED(linenum);
-	while (h != NULL  && h->n > 0 && h->n <= 132)
+	while (h != NULL  && h->n > 0 && h->n <= 127)
 	{
 		printf("%c", h->n);
 		h = h->next;
