@@ -17,7 +17,8 @@ size_t print_dlistint(stack_t *h, unsigned int linenum, int pint_flag)
 	{
 		if (h == NULL)
 		{
-			fprintf(stderr, "L%d: can't pint, stack empty\n", linenum);
+			fprintf(stderr, "L%d: can't pint, stack empty\n",
+				linenum);
 			free_dlistint(h);
 			free(lineptr);
 			exit(EXIT_FAILURE);
