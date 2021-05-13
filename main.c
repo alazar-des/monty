@@ -32,7 +32,7 @@ int main(int argc, char *argv[])
 	ssize_t nread;
 	void (*func)(stack_t **, unsigned int);
 	stack_t *head = NULL;
-	int queue_flag = 0, rflag;
+	//int queue_flag = 0, rflag;
 
 	if (argc != 2)
 		fprintf(stderr, "USAGE: monty file\n"), exit(EXIT_FAILURE);
@@ -48,13 +48,14 @@ int main(int argc, char *argv[])
 		opcode = strtok(lineptr, delim);
 		if (opcode == NULL || *opcode == '#')
 			continue;
+		/*
 		rflag = check_queue(opcode);
 		if (rflag != -1)
 		{
 			queue_flag = rflag;
 			continue;
-		}
-		func = get_opcode_function(opcode, queue_flag);
+		}*/
+		func = get_opcode_function(opcode);
 		if (func == NULL)
 		{
 			fprintf(stderr, "L%d: unknown instruction %s\n",
