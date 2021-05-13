@@ -58,7 +58,7 @@ int main(int argc, char *argv[])
 		func = get_opcode_function(opcode);
 		if (func == NULL)
 		{
-			fprintf(stderr, "L%d: unknown instruction %s\n",
+			fprintf(stderr, "L%d: unknown instruction %s\n",\
 				line_num, opcode);
 			free_dlistint(head), free(lineptr), fclose(stream);
 			exit(EXIT_FAILURE);
