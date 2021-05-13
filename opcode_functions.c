@@ -1,14 +1,12 @@
 #include "monty.h"
 
-#define UNUSED(linenum) (void)(linenum)
-
 /**
- * push - add node at the beginning
+ * push_begin - add node at the beginning
  * @head: points to the head node pointer
  * @linenum: line number of the instruction in the .m file
  *
  */
-void push(stack_t **head, unsigned int linenum)
+void push_begin(stack_t **head, unsigned int linenum)
 {
 	char *str;
 	int n, i = 0;
