@@ -26,7 +26,7 @@ void (*get_opcode_function(char *str))(stack_t **, unsigned int)
 	};
 	int i;
 
-	for (i = 0; i < 11; i++)
+	for (i = 0; i < 13; i++)
 		if (strcmp(str, ops_inst[i].opcode) == 0)
 			return (ops_inst[i].f);
 	return (NULL);
